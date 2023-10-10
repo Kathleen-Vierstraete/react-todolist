@@ -148,7 +148,7 @@
     color: #fff;
   }
   
-  @media (max-width: 360px) {
+  @media (max-width: 600px) {
   .todo-app {
     display: flex;
     flex-direction: column;
