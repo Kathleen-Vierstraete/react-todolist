@@ -2,11 +2,13 @@ import React, {useState, useEffect} from 'react';
 import TodoForm from './TodoForm';
 import Todo from './Todo';
 
-
+//managing the actual to do list 
 function TodoList() {
 
+    //const for the tasks
     const [todos, setTodos] = useState ([]);
 
+    // handling the local storage to have the task when reloading or closing the page
     useEffect(() => {
         const storedTasks = JSON.parse(localStorage.getItem("todos"));
         if (storedTasks) {
@@ -24,7 +26,9 @@ function TodoList() {
         };
       }, [todos]);
 
+    // const to add a task
     const addTodo = todo => {
+        //what to do if there is no text
         if(!todo.text || /^\s*$/.test(todo.text)){
             return 
         }
@@ -35,6 +39,7 @@ function TodoList() {
         // console.log(...todos);
     };
 
+    //const to update a task
     const updateTodo = (todoId, newValue) => {
         if(!newValue.text || /^\s*$/.test(newValue.text)){
             return 
@@ -43,12 +48,14 @@ function TodoList() {
         setTodos(prev => prev.map(item=> (item.id === todoId ? newValue : item)));
     }
 
+    //const to delete a task
     const removeTodo = id => {
         const removeArr = [...todos].filter(todo => todo.id !== id)
 
         setTodos(removeArr)
     }
 
+    //handling the crossing out of a task
     const completeTodo = id => {
 
         let updatedTodos = todos.map(todo => {
@@ -60,6 +67,7 @@ function TodoList() {
         setTodos(updatedTodos);
     }
 
+    //returning the appropriate HTML
   return (
     <div>
         <h1>What are the tasks to be done?</h1>
