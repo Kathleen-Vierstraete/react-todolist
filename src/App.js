@@ -13,22 +13,22 @@ import Navbar from './components/Navbar';
 //page initialisation, compilation with TodoList 
 function App() {
   return (
-    <Router>
+    // <Router>
     <div className="todo-app">
     <Navbar />
 
     <Routes>
 
-      <Route path="https://kathleen-vierstraete.github.io/react-todolist/" element={<TodoList />} />
-      <Route path="https://kathleen-vierstraete.github.io/react-todolist/fr" element={<TodoListFrench />} />
-      <Route path="https://kathleen-vierstraete.github.io/react-todolist/es" element={<TodoListSpanish />} />
+      <Route path="/" element={<TodoList />} />
+      <Route path="/fr" element={<TodoListFrench />} />
+      <Route path="/es" element={<TodoListSpanish />} />
 
 
 
       </Routes>
 
     </div>
-    </Router>
+    // </Router>
 
   );
 }
