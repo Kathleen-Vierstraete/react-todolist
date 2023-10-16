@@ -1,10 +1,10 @@
 import React, {useState} from 'react';
-import TodoForm from './TodoForm';
-import editTask from './../assets/img/edit.png';
-import trash from './../assets/img/trash.png';
+import TodoFormFrench from './TodoFormFrench';
+import editTask from '../../assets/img/edit.png';
+import trash from '../../assets/img/trash.png';
 
 // component to handle the tasks 
-function Todo({todos, completeTodo, removeTodo, updateTodo}) {
+function TodoFrench({todos, completeTodo, removeTodo, updateTodo}) {
 
     //using the useState from React to declare the state variables
     const [edit, setEdit] = useState({
@@ -23,7 +23,7 @@ function Todo({todos, completeTodo, removeTodo, updateTodo}) {
 
     // if there is an id, return the edition of the todoForm
     if (edit.id) {
-        return <TodoForm edit={edit} onSubmit={submitUpdate} />
+        return <TodoFormFrench edit={edit} onSubmit={submitUpdate} />
     }
 
     //returning the HTML to be seen on the page
@@ -45,4 +45,4 @@ function Todo({todos, completeTodo, removeTodo, updateTodo}) {
   
 }
 
-export default Todo
+export default TodoFrench

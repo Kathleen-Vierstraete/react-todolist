@@ -35,7 +35,8 @@
   
   .complete {
     text-decoration: line-through;
-    opacity: 0.4;
+    opacity: 0.3;
+    font-style: italic;
   }
   
   .todo-form {
@@ -141,12 +142,24 @@
   
   .delete-icon {
     margin-right: 5px;
-    color: #fff;
   }
   
   .edit-icon {
-    color: #fff;
+    margin-right: 5px;
   }
+
+  .list{
+    text-align: end;
+}
+
+ul.list {
+  list-style-type: none;
+}
+
+li.item {
+  display : inline-block;
+  margin : 5px;
+}
   
   @media (max-width: 600px) {
   .todo-app {
