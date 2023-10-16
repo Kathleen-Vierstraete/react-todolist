@@ -19,9 +19,9 @@ function App() {
 
     <Routes>
 
-      <Route path="/" element={<TodoList />} />
-      <Route path="/fr" element={<TodoListFrench />} />
-      <Route path="/es" element={<TodoListSpanish />} />
+      <Route path="/react-todolist" element={<TodoList />} />
+      <Route path="/react-todolist/fr" element={<TodoListFrench />} />
+      <Route path="/react-todolist/es" element={<TodoListSpanish />} />
 
 
 
