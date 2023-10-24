@@ -1,7 +1,9 @@
 import React, {useState, useEffect, useRef} from 'react'
+import { useTranslation } from 'react-i18next';
+
 
 //handling the task Form 
-function TodoFormFrench(props) {
+function TodoForm(props) {
 
     //declaring the const for the input
     const [input, setInput] = useState(props.edit ? props.edit.value : '');
@@ -32,6 +34,8 @@ function TodoFormFrench(props) {
         setInput("");
     }
 
+  const { t } = useTranslation();
+
     // returning the proper form
     return (
         <form className='todo-form' onSubmit={handleSubmit}>
@@ -41,24 +45,24 @@ function TodoFormFrench(props) {
         ( 
             // if true : show the edit form
         <><input    type="text" // text type
-                    placeholder="Modifier une tâche"  // defining the placeholder
+                    placeholder="Edit a task"  // defining the placeholder
                     value={input} name="text"  // looking for an input
                     className="todo-input edit" //adding classname
                     onChange={handleChange}  // use handleChange on change
                     ref={inputRef} /> {/*default input */}
                     
-            <button className="todo-button edit">Modifier</button></> // adding a edit task button
+            <button className="todo-button edit">{t("EditButton")}</button></> // adding a edit task button
         )        
         : 
         (
             // if false show the normal form to add a task
         <><input    type="text" 
-                    placeholder="Ajouter une tâche" 
+                    placeholder={t("TaskPlaceholder")}
                     value={input} name="text" 
                     className="todo-input" 
                     onChange={handleChange} 
                     ref={inputRef} />
-            <button className="todo-button">Ajouter</button></> 
+            <button className="todo-button">{t("AddButton")}</button></> 
         )   
     }
 
@@ -67,4 +71,4 @@ function TodoFormFrench(props) {
   )
 }
 
-export default TodoFormFrench
+export default TodoForm

@@ -160,6 +160,19 @@ li.item {
   display : inline-block;
   margin : 5px;
 }
+
+.select {
+  color : white;
+  background-color : black;
+  border-radius: 5px;
+
+}
+
+.option {
+  background-color: #273470;
+  
+}
+
   
   @media (max-width: 600px) {
   .todo-app {

@@ -1,9 +1,10 @@
 import React, {useState, useEffect} from 'react';
-import TodoFormSpanish from './TodoFormSpanish';
-import TodoSpanish from './TodoSpanish';
+import TodoForm from './TodoForm';
+import Todo from './Todo';
+import { useTranslation } from 'react-i18next';
 
 //managing the actual to do list 
-function TodoListSpanish() {
+function TodoList() {
 
     //const for the tasks
     const [todos, setTodos] = useState ([]);
@@ -67,15 +68,17 @@ function TodoListSpanish() {
         setTodos(updatedTodos);
     }
 
+    const { t } = useTranslation();
+
     //returning the appropriate HTML
   return (
     <div>
-        <h1>¿Cuáles son las tareas a realizar?</h1>
-        <TodoFormSpanish
+        <h1>{t("Title")}</h1>
+        <TodoForm 
             onSubmit={addTodo}
         />
 
-        <TodoSpanish
+        <Todo
             todos={todos} 
             completeTodo={completeTodo}
             removeTodo={removeTodo}
@@ -85,4 +88,4 @@ function TodoListSpanish() {
   )
 }
 
-export default TodoListSpanish
+export default TodoList
